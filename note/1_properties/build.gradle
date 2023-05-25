@@ -1,0 +1,14 @@
+// defaultTasks 'aaa'
+
+// tasks.register('aaa') {
+// 	doLast {
+		println name // :String - project directory name
+		println project.name
+
+		println path // :String - absolute path of the project
+		println description // :String - description for the project
+
+		println projectDir.toString() // :File 빌드 스크립트가 있는 디렉토리
+		println buildDir.toString() // :File - projectDir/build
+// 	}
+// }
