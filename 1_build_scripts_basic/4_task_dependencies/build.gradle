@@ -1,0 +1,34 @@
+/* task 의존 설정 */
+
+/* case 1 */
+// 의존 설정 전에 의존되는 task 정의
+// $ gradle intro
+
+tasks.register('hello') {
+	doLast {
+		println 'Hello world!'
+	}
+}
+
+tasks.register('intro') {
+	dependsOn tasks.hello
+	doLast {
+		println "I`m Gradle"
+	}
+}
+
+/* case 2 */
+// 의존 설정 후에 의존되는 task 정의
+// $ gradle taskX
+tasks.register('taskX') {
+    dependsOn 'taskY'
+    doLast {
+        println 'taskX'
+    }
+}
+
+tasks.register('taskY') {
+    doLast {
+        println 'taskY'
+    }
+}

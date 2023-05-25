@@ -1,0 +1,33 @@
+/* 외부 의존성 선언 */
+
+// 빌드 스크립트에서 외부 라이브러리를 사용해야 하는 경우
+// 빌드 스크립트 자체에서 스크립트 클래스 경로에 추가
+
+// buildscript() : ScriptHandler 인스턴스 설정
+// dependencies > classpath 에 외부 라이브러리 의존성 추가
+
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath group: 'commons-codec', name: 'commons-codec', version: '1.2'
+	}
+}
+
+/* 이용할 외부 라이브러리에서 클래스 import */
+// build.gradle 내부 어디든 존재만 하면 된다
+// 가장 상단에 설정하는것이 익숙해서 대부분 상단에 위치
+
+import org.apache.commons.codec.binary.Base64
+
+tasks.register('encode') {
+	doLast {
+		// Groovy 에서 def 로 변수 선언하면 type 생략 가능
+		def base64 = new Base64()
+		def encodedString = base64.encode('hello world\n'.getBytes())
+		println new String(encodedString)
+	}
+}
+
+// $ gradle encode

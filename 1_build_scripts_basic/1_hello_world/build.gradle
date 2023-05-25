@@ -1,0 +1,18 @@
+/* gradle 기본 기능 : 정의된 task 실행 */
+
+/* 1. 디렉토리의 build.gradle 파일에 task 정의 */
+// task name hello 등록
+
+tasks.register('hello') {
+	doLast {
+		println 'Hello world!'
+	}
+}
+
+/* 2. 디렉토리의 build.gradle 파일에 정의된 task 실행 */
+// $ gradle hello
+
+/* 3. task 실행 with 옵션 -q */
+// block gradle log 출력
+// $ gradle -q hello
+// $ gradle hello -q

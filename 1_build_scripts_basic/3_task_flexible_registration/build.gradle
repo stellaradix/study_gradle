@@ -1,0 +1,12 @@
+/* 유연한 task 등록 */
+
+4.times { counter ->
+	tasks.register("task$counter") {
+		doLast {
+			println "I`m task number $counter"
+		}
+	}
+}
+
+// $ gradle -q task0 task1 task2 task3
+// $ gradle -q task3, task2, task1, task0

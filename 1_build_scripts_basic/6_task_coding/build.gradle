@@ -1,0 +1,24 @@
+/* 빌드 스크립트 코딩 */
+
+// 변수 선언
+// 문자열 포맷팅
+// 문자열 변환
+
+tasks.register('upper') {
+	doLast {
+		String someString = 'mY_nAmE'
+		println "Original: $someString"
+		println "Upper case: ${someString.toUpperCase()}"
+	}
+}
+
+// 반복문
+
+tasks.register('count') {
+	doLast {
+		4.times { print "$it " }
+	}
+}
+
+// $ gradle upper
+// $ gradle count

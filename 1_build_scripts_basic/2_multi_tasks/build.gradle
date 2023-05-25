@@ -1,0 +1,38 @@
+/* 여러개의 task 등록하기 */
+
+/* 1. 여러개의 task 등록 */
+
+tasks.register('task0') {
+	doLast {
+		println 'task number 0'
+	}
+}
+
+tasks.register('task1') {
+	doLast {
+		println 'task number 1'
+	}
+}
+
+tasks.register('task2') {
+	doLast {
+		println 'task number 2'
+	}
+}
+
+tasks.register('task3') {
+	doLast {
+		println 'task number 3'
+	}
+}
+
+/* 2. 각각 task 실행 */
+// $ gradle task0
+// $ gradle task1
+// $ gradle task2
+// $ gradle task3
+
+/* 3. 여러개의 task 실행 */
+// $ gradle -q task0 task1 task2 task3
+// $ gradle -q task3, task2, task1, task0
+// $ gradle -q task3,task2,task1,task0 - failure: exception
