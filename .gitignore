@@ -1,0 +1,28 @@
+# Common List of Project
+*
+!*/
+!.gitattributes
+!.gitignore
+!.gitkeep
+!*.[Mm][Dd]
+
+# Build Tool > Gradle
+!**/settings.gradle
+!**/settings.gradle.kts
+!**/build.gradle
+!**/build.gradle.kts
+!**/gradle.properties
+**/.gradle/
+
+# Build Output Directory
+**/bin/
+**/out/
+**/build/
+**/target/
+**/debug/
+**/release/
+
+# Editor Setting Directory
+**/.idea/
+**/.settings/
+**/.vscode/
