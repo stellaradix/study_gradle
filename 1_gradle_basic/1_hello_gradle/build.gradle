@@ -1,0 +1,5 @@
+println 'Hello Gradle!'
+
+task hello {
+	println 'configuration hello task'
+}

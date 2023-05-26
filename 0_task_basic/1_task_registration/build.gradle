@@ -1,0 +1,15 @@
+tasks.register('task0') {
+	println 'task0 setting'
+}
+
+task 'task1' {
+	println 'task1 setting'
+}
+
+task (task2) {
+	println 'task2 setting'
+}
+
+task task3() {
+	println 'task3 setting'
+}
