@@ -1,0 +1,33 @@
+/* Gradle Build Phase */
+
+/* 1단계 : Initialization */
+// 1. 빌드에 사용할 Settings 인스턴스 생성
+// 2. 설정 빌드 파일 검색 (Settings.gradle)
+// 3. 설정 빌드 파일 존재하면 빌드 따라서 Settings 인스턴스 구성
+// 4. 빌드 참여하는 프로젝트 결정 및 계층 구조 구성
+// 5. 빌드 참여하는 Project 인스턴스 생성
+
+/* 2단계 : Configuration */
+// 1. 프로젝트 빌드 파일 검사 (build.gradle)
+// 2. 프로젝트 빌드 따라 Project 의 task 설정 (Project = task 객체의 모음)
+// 3. 요청된 task 에 대한 task graph 생성
+
+/* 3단계 : Execution */
+// 요청된 task 종속성 순서대로 action 예약 실행
+
+println '== Phase 2: Configuration =='
+println "Project Name: ${project.name}"
+
+task hello {
+	println 'task hello closure'
+	doFirst {
+		println '== Phase 3: Execution =='
+		println 'Execution Phase First Action'
+	}
+	doLast {
+		println '== Phase 3: Execution =='
+		println 'Execution Phase Last Action'
+	}
+}
+
+// $ gradle hello

@@ -1,5 +1,16 @@
-println 'Hello Gradle!'
+/* Gradle 기본 기능 : task 실행 */
 
+/* 1. task 설정 */
+// task name: hello
 task hello {
-	println 'configuration hello task'
+	doLast {
+		println 'Hello Gradle!'
+	}
 }
+
+/* 2. task 실행 (기본) : $ gradle <task name> */
+// $ gradle hello : hello task 실행
+
+/* 3. task 실행 (옵션 -q) : block gradle log */
+// $ gradle -q hello
+// $ gradle hello -q

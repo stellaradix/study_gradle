@@ -1,3 +1,0 @@
-rootProject.name = 'Build Lifecycle'
-println '== Phase 1: Initialization =='
-println 'This is excuted during the initialization phase'

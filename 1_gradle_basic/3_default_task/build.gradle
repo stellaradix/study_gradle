@@ -1,20 +1,21 @@
-/* default task 설정 */
+/* default task */
 // 하나 이상의 task 를 default 로 설정 가능
 // $ gradle : default task 모두 실행
 
 /* default task 실행 */
 // $ gradle
-// $ gradle clean run 과 동일한 동작
+// 동일 동작 1 : $ gradle clean run
+// 동일 동작 2 : $ gradle clean, run
 
 defaultTasks 'clean', 'run'
 
-tasks.register('clean') {
+task clean {
 	doLast {
 		println 'Default Cleaning!'
 	}
 }
 
-tasks.register('run') {
+task run {
 	doLast {
 		println 'Default Running!'
 	}
@@ -23,7 +24,7 @@ tasks.register('run') {
 /* default task 아닌 task 실행 */
 // $ gradle other
 
-tasks.register('other') {
+task other {
 	doLast {
 		println "I`m not a default task!"
 	}

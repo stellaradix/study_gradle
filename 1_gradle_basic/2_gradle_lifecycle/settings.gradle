@@ -1,0 +1,2 @@
+println '== Phase 1: Initialization =='
+rootProject.name = 'Gradle Lifecycle'
